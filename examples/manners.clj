@@ -43,13 +43,12 @@
   (Guest name ?g2
            sex ?s2
            hobby ?h1
-    ((not= ?s1 ?s2)
-     (not-exists Path id ?id
-  		   name ?g2)
-     (not-exists Chosen id ?id
-  		   name ?g2
-		   hobby ?h1)))
+    (not= ?s1 ?s2))
   ?cnt (Count c ?c)
+  (not Path id ?id
+           name ?g2)
+  (not Chosen id ?id
+           name ?g2 hobby ?h1)
   =>
   (modify ?ctx state make_path)
   (asser Seating seat1 ?seat2
@@ -76,8 +75,9 @@
            path_done no)
   (Path id ?pid
   		   name ?n1
-           seat  ?s
-    (not-exists Path id ?id name ?n1))
+         seat  ?s)
+  (not Path id ?id
+       name ?n1)
   =>
   (asser Path id ?id
   		   name ?n1
@@ -97,6 +97,7 @@
   (Last seat ?l_seat)
   (Seating seat2 ?l_seat)
   =>
+  (problem-solved)
   (modify ?ctx state print_results)
   (println "Yes, we are done!!"))
 
@@ -119,7 +120,7 @@
   (println (str ?n " " ?s)))
 
 (Mann-All-Done
-  0
+  -1
   (context state print_results)
   =>
   (println "Halt!"))

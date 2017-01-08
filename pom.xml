@@ -3,7 +3,7 @@
   <groupId>rete</groupId>
   <artifactId>rete</artifactId>
   <packaging>jar</packaging>
-  <version>4.2.0-SNAPSHOT</version>
+  <version>5.3.0-SNAPSHOT</version>
   <name>rete</name>
   <description>Clojure RETE implementation for frames</description>
   <url>https://github.com/rururu/rete4frames</url>
@@ -16,7 +16,7 @@
   <scm>
     <connection>scm:git:git://github.com/rururu/rete4frames.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/rururu/rete4frames.git</developerConnection>
-    <tag>0397f7268fc096280d28c0482d46e7e8fa338952
+    <tag>d2416b958e9855942484915d1aac572bd60a8438
 </tag>
     <url>https://github.com/rururu/rete4frames</url>
   </scm>
@@ -30,19 +30,17 @@
     </resources>
     <testResources>
       <testResource>
-        <directory>dev-resources</directory>
-      </testResource>
-      <testResource>
         <directory>resources</directory>
       </testResource>
     </testResources>
     <directory>target</directory>
     <outputDirectory>target/classes</outputDirectory>
+    <plugins/>
   </build>
   <repositories>
     <repository>
       <id>central</id>
-      <url>http://repo1.maven.org/maven2/</url>
+      <url>https://repo1.maven.org/maven2/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
@@ -65,19 +63,7 @@
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
-      <version>1.5.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.clojure</groupId>
-      <artifactId>tools.nrepl</artifactId>
-      <version>0.2.3</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>clojure-complete</groupId>
-      <artifactId>clojure-complete</artifactId>
-      <version>0.2.3</version>
-      <scope>test</scope>
+      <version>1.8.0</version>
     </dependency>
   </dependencies>
 </project>
